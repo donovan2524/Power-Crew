@@ -28,7 +28,59 @@
 
 <input type="text" id="buscador" placeholder="Buscar café..." onkeyup="buscarProducto()"><br>
 
-<div id="contenedorProductos"></div>
+<div id="contenedorProductos">
+
+    <!-- ESPRESSO -->
+    <div class="card">
+        <img src="espresso.jpg">
+        <h2>Espresso</h2>
+        <p>$30</p>
+        <button onclick="agregarCarrito('Espresso', 30)">
+            Personalizar
+        </button>
+    </div>
+
+    <!-- LATTE -->
+    <div class="card">
+        <img src="latte.jpg">
+        <h2>Latte</h2>
+        <p>$45</p>
+        <button onclick="agregarCarrito('Latte', 45)">
+            Personalizar
+        </button>
+    </div>
+
+    <!-- CAPUCCINO -->
+    <div class="card">
+        <img src="capuccino.jpg">
+        <h2>Capuccino</h2>
+        <p>$40</p>
+        <button onclick="agregarCarrito('Capuccino', 40)">
+            Personalizar
+        </button>
+    </div>
+
+    <!-- MOKA -->
+    <div class="card">
+        <img src="moka.jpg">
+        <h2>Moka</h2>
+        <p>$50</p>
+        <button onclick="agregarCarrito('Moka', 50)">
+            Personalizar
+        </button>
+    </div>
+
+    <!-- FRAPPE PROTEÍNA -->
+    <div class="card">
+        <img src="proteinafrappe.jpg">
+        <h2>Frappe Proteína</h2>
+        <p>$60</p>
+        <button onclick="agregarCarrito('Frappe Proteína', 60)">
+            Personalizar
+        </button>
+    </div>
+
+</div>
 
 </section>
 
