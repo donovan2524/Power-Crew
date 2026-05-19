@@ -429,7 +429,7 @@ function cargarProductosCliente(){
         let imagen = item.imagen || "cafe.jpg";
 
         if(!imagen.startsWith("data:image") && !imagen.startsWith("../img/")){
-            imagen = "../img/" + imagen;
+            imagen = "" + imagen;
         }
 
         let boton = "";
