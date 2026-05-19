@@ -27,7 +27,49 @@
 
 <input type="text" id="buscador" placeholder="Buscar postre..." onkeyup="buscarProducto()">
 
-<div id="contenedorProductos"></div><br>
+<div id="contenedorProductos">
+
+    <!-- BROWNIE -->
+    <div class="card">
+        <img src="brownie.jpg">
+        <h2>Brownie</h2>
+        <p>$40</p>
+        <button onclick="agregarCarrito('Brownie', 40)">
+            Agregar al carrito
+        </button>
+    </div>
+
+    <!-- PASTEL DE CHOCOLATE -->
+    <div class="card">
+        <img src="pastelchocolate.jpg">
+        <h2>Pastel de Chocolate</h2>
+        <p>$50</p>
+        <button onclick="agregarCarrito('Pastel de Chocolate', 50)">
+            Agregar al carrito
+        </button>
+    </div>
+
+    <!-- GALLETAS -->
+    <div class="card">
+        <img src="galletas.jpg">
+        <h2>Galletas</h2>
+        <p>$35</p>
+        <button onclick="agregarCarrito('Galletas', 35)">
+            Agregar al carrito
+        </button>
+    </div>
+
+    <!-- PAY DE QUESO -->
+    <div class="card">
+        <img src="payqueso.jpg">
+        <h2>Pay de Queso</h2>
+        <p>$45</p>
+        <button onclick="agregarCarrito('Pay de Queso', 45)">
+            Agregar al carrito
+        </button>
+    </div>
+
+</div><br>
 
 </section>
 
