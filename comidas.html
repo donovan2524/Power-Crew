@@ -27,7 +27,49 @@
 
 <input type="text" id="buscador" placeholder="Buscar comida..." onkeyup="buscarProducto()">
 
-<div id="contenedorProductos"></div><br>
+<div id="contenedorProductos">
+
+    <!-- SANDWICH -->
+    <div class="card">
+        <img src="sandwich.jpg">
+        <h2>Sandwich</h2>
+        <p>$55</p>
+        <button onclick="agregarCarrito('Sandwich', 55)">
+            Agregar al carrito
+        </button>
+    </div>
+
+    <!-- CROISSANT -->
+    <div class="card">
+        <img src="croissant.jpg">
+        <h2>Croissant</h2>
+        <p>$45</p>
+        <button onclick="agregarCarrito('Croissant', 45)">
+            Agregar al carrito
+        </button>
+    </div>
+
+    <!-- ENSALADA -->
+    <div class="card">
+        <img src="ensalada.jpg">
+        <h2>Ensalada</h2>
+        <p>$60</p>
+        <button onclick="agregarCarrito('Ensalada', 60)">
+            Agregar al carrito
+        </button>
+    </div>
+
+    <!-- PANINI -->
+    <div class="card">
+        <img src="panini.jpg">
+        <h2>Panini</h2>
+        <p>$70</p>
+        <button onclick="agregarCarrito('Panini', 70)">
+            Agregar al carrito
+        </button>
+    </div>
+
+</div><br>
 
 </section>
 
