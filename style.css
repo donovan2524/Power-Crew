@@ -55,6 +55,8 @@ header p{
     transition:0.4s;
     padding-top:60px;
     z-index:1001;
+    display:flex;
+    flex-direction:column;
 }
 
 .menu a{
@@ -69,6 +71,12 @@ header p{
 .menu a:hover{
     background:gold;
     color:black;
+}
+
+.menu a.adminLink{
+    margin-top:auto;
+    background:#111;
+    border-top:1px solid gold;
 }
 
 .cerrar{
@@ -99,11 +107,7 @@ header p{
     font-size:20px;
 }
 
-
-
-
-
-
+/* PRODUCTOS */
 .productos{
     text-align:center;
     padding:30px;
@@ -118,14 +122,57 @@ header p{
     font-size:18px;
 }
 
+/* CARD */
 .card{
-    background:#1b1b1b;
+    position:relative;
+    background:linear-gradient(160deg,#1a1a1a,#111);
     width:250px;
     display:inline-block;
     margin:15px;
     padding:20px;
-    border-radius:15px;
-    box-shadow:0 0 10px rgba(255,215,0,0.3);
+    border-radius:18px;
+    border:1px solid rgba(255,215,0,0.4);
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.6),
+        0 0 25px rgba(255,215,0,0.25);
+    transition:all 0.35s ease;
+    animation:entrada 0.5s ease;
+    filter:saturate(1.15);
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.8),
+        0 0 35px rgba(255,215,0,0.5);
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:radial-gradient(circle at top, rgba(255,215,0,0.18), transparent 60%);
+    opacity:0;
+    transition:opacity 0.4s;
+}
+
+.card:hover::before{
+    opacity:1;
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:15px;
+    filter:saturate(1.25) contrast(1.1);
+    transition:all 0.4s ease;
+}
+
+.card:hover img{
+    filter:saturate(1.4) contrast(1.2);
 }
 
 .card h2{
@@ -138,32 +185,65 @@ header p{
     margin-bottom:15px;
 }
 
+/* BOTON CARD */
 .card button{
-    background:gold;
-    color:black;
+    position:relative;
+    overflow:hidden;
+
+    background: linear-gradient(135deg, #7CFC00, #E6C200);
+    color:#1a1a1a;
     border:none;
-    padding:10px 20px;
-    border-radius:10px;
+    padding:12px 26px;
+    border-radius:14px;
     cursor:pointer;
-    font-weight:bold;
+    font-weight:700;
+    letter-spacing:0.4px;
+
+    /* brillo reducido */
+    box-shadow:
+        0 4px 10px rgba(255,215,0,0.35),
+        inset 0 0 6px rgba(255,255,255,0.35);
+
+    transition: all 0.3s ease;
 }
 
 .card button:hover{
-    background:white;
+    transform: scale(1.06);
+    background: linear-gradient(135deg, #FFD700, #7CFC00);
+
+    box-shadow:
+        0 6px 15px rgba(124,252,0,0.45);
+
+    filter: brightness(1.08);
 }
 
+.card button::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+    opacity:0;
+    transition: opacity 0.25s ease;
+}
 
+.card button:hover::after{
+    opacity:1;
+}
 
-
-
-
+/* CARRITO */
 .carrito{
     background:#1b1b1b;
     width:80%;
     margin:40px auto;
     padding:25px;
     border-radius:15px;
-    box-shadow:0 0 10px rgba(255,215,0,0.3);
+    box-shadow:0 0 15px rgba(255,215,0,0.4);
     text-align:center;
 }
 
@@ -177,18 +257,35 @@ header p{
     font-size:20px;
 }
 
-#listaCarrito p{
-    margin:8px 0;
-}
-
 .carrito h3{
     margin-bottom:20px;
-    color:white;
 }
 
+/* BOTONES */
 .pagar{
-    background:gold;
-    color:black;
+    background:linear-gradient(135deg,#228B22,#FFD700,#ADFF2F);
+    color:#1a1a1a;
+    border:none;
+    padding:14px 45px;
+    font-size:20px;
+    font-weight:800;
+    border-radius:16px;
+    cursor:pointer;
+    letter-spacing:1px;
+    box-shadow:
+        0 0 25px rgba(124,252,0,0.6),
+        0 0 45px rgba(255,215,0,0.6);
+    transition:all 0.3s ease;
+}
+
+.pagar:hover{
+    transform:scale(1.1);
+    filter:saturate(1.6) brightness(1.3);
+}
+
+.vaciar{
+    background:#7a0000;
+    color:white;
     border:none;
     padding:12px 30px;
     font-size:18px;
@@ -197,81 +294,20 @@ header p{
     font-weight:bold;
 }
 
-.pagar:hover{
-    background:white;
+.vaciar:hover{
+    background:red;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-radius:12px;
-    margin-bottom:15px;
-}
-
-/* TABLET */
-@media (max-width:768px){
-    .card{
-        width:90%;
-    }
-
-    .card img{
-        height:200px;
-    }
-}
-
-/* CELULAR */
-@media (max-width:480px){
-    .card{
-        width:95%;
-    }
-
-    .card img{
-        height:170px;
-    }
-
-    #buscador{
-        width:95%;
-    }
-
-    header h1{
-        font-size:30px;
-    }
-}
-
-
-
-
-
-
+/* PAGO */
 .pagoBox{
     background:#1b1b1b;
-    width:80%;
+    width:90%;
+    max-width:1200px;
     margin:40px auto;
     padding:25px;
     border-radius:15px;
     text-align:center;
-    box-shadow:0 0 10px rgba(255,215,0,0.3);
+    box-shadow:0 0 15px rgba(255,215,0,0.4);
 }
 
 .pagoBox h2{
@@ -296,31 +332,9 @@ header p{
     margin:8px;
     border:none;
     border-radius:10px;
-    font-size:16px;
 }
 
-.vaciar{
-    background:#7a0000;
-    color:white;
-    border:none;
-    padding:12px 30px;
-    font-size:18px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-    margin-left:10px;
-}
-
-.vaciar:hover{
-    background:red;
-}
-
-
-
-
-
-
-
+/* LOADER */
 .loader{
     position:fixed;
     top:0;
@@ -332,13 +346,7 @@ header p{
     justify-content:center;
     align-items:center;
     z-index:9999;
-    color:white;
-    font-size:25px;
     flex-direction:column;
-}
-
-.loader span{
-    margin-top:15px;
 }
 
 .spinner{
@@ -351,281 +359,21 @@ header p{
 }
 
 @keyframes spin{
-    0%{ transform:rotate(0deg); }
-    100%{ transform:rotate(360deg); }
+    to{ transform:rotate(360deg); }
 }
 
-
-.venta{
-    background:#111;
-    border:1px solid gold;
-    padding:15px;
-    border-radius:12px;
-    margin:15px 0;
-    text-align:left;
+@keyframes entrada{
+    from{ opacity:0; transform:translateY(15px) scale(0.95); }
+    to{ opacity:1; transform:translateY(0) scale(1); }
 }
 
-
-
-
-.modalCafe{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.85);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
+/* RESPONSIVE */
+@media(max-width:768px){
+    .card{ width:90%; }
+    #buscador{ width:90%; }
 }
 
-.contenidoModal{
-    background:#1b1b1b;
-    padding:30px;
-    border-radius:15px;
-    width:320px;
-    text-align:center;
-    box-shadow:0 0 15px gold;
-}
-
-.contenidoModal h2{
-    color:gold;
-    margin-bottom:20px;
-}
-
-.contenidoModal label{
-    display:block;
-    margin-top:15px;
-}
-
-.contenidoModal select{
-    width:100%;
-    padding:10px;
-    margin-top:8px;
-    border-radius:8px;
-    border:none;
-}
-
-.contenidoModal button{
-    background:gold;
-    color:black;
-    border:none;
-    padding:10px 15px;
-    margin-top:15px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-
-
-
-/*PANEL*/
-/* PANEL ADMIN MÁS GRANDE */
-
-.pagoBox{
-    width:90%;
-    max-width:1200px;
-}
-
-#categoriaProducto{
-    width:300px;
-    padding:12px;
-    font-size:18px;
-    border-radius:10px;
-    margin-bottom:20px;
-    background:#222;
-    color:white;
-    border:1px solid gold;
-}
-
-#listaAdmin{
-    margin-top:30px;
-}
-
-#listaAdmin p{
-    background:#111;
-    border:1px solid gold;
-    padding:20px;
-    border-radius:15px;
-    margin:15px 0;
-    font-size:22px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-#listaAdmin button{
-    margin-left:10px;
-    font-size:18px;
-    padding:8px 15px;
-}
-
-#historialVentas{
-    margin-top:30px;
-}
-
-.venta{
-    font-size:20px;
-    padding:25px;
-}
-
-
-
-
-
-
-
-
-
-
-/* RESPONSIVE GENERAL */
-
-@media (max-width: 1024px){
-
-    header h1{
-        font-size:36px;
-    }
-
-    .pagoBox,
-    .carrito{
-        width:90%;
-    }
-
-    .card{
-        width:80%;
-    }
-
-    #buscador{
-        width:85%;
-    }
-}
-
-@media (max-width: 768px){
-
-    header{
-        padding:30px 15px;
-    }
-
-    header h1{
-        font-size:30px;
-    }
-
-    header p{
-        font-size:16px;
-    }
-
-    .abrir{
-        width:50px;
-        height:50px;
-        font-size:26px;
-    }
-
-    .menu a{
-        font-size:20px;
-    }
-
-    .card{
-        width:90%;
-        margin:15px auto;
-    }
-
-    .card img{
-        height:190px;
-    }
-
-    .pagoBox input,
-    .pagoBox select{
-        width:95%;
-    }
-
-    #listaCarrito p{
-        font-size:16px;
-    }
-}
-
-@media (max-width: 480px){
-
-    header h1{
-        font-size:26px;
-    }
-
-    .productos{
-        padding:15px;
-    }
-
-    #buscador{
-        width:95%;
-        font-size:16px;
-    }
-
-    .card{
-        width:95%;
-        padding:15px;
-    }
-
-    .card img{
-        height:160px;
-    }
-
-    .carrito,
-    .pagoBox{
-        width:95%;
-        padding:15px;
-    }
-
-    .pagar,
-    .vaciar,
-    .pagoBox button{
-        width:90%;
-        margin:8px auto;
-        display:block;
-    }
-
-    #listaAdmin p{
-        flex-direction:column;
-        gap:10px;
-        text-align:center;
-        font-size:18px;
-    }
-
-    #categoriaProducto{
-        width:95%;
-    }
-}
-
-
-
-
-
-/* ADMIN ABAJO DEL MENU */
-
-.menu{
-    display:flex;
-    flex-direction:column;
-}
-
-.menu a.adminLink{
-    margin-top:auto;
-    background:#111;
-    border-top:1px solid gold;
-}
-
-
-.volverBtn{
-    background:#333;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    margin-top:15px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.volverBtn:hover{
-    background:#555;
+@media(max-width:480px){
+    .card{ width:95%; }
+    header h1{ font-size:26px; }
 }
