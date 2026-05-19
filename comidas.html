@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comidas</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="menu" class="menu">
+    <button class="cerrar" onclick="cerrarMenu()">✖</button>
+    <a href="index.html">Inicio</a>
+    <a href="cafes.html">Cafés</a>
+    <a href="postres.html">Postres</a>
+    <a href="comidas.html">Comidas</a>
+</div>
+
+<button class="abrir" onclick="abrirMenu()">☰</button>
+
+<header>
+<h1>Comidas</h1>
+<p>Opciones deliciosas para cualquier momento</p>
+</header>
+
+<section class="productos">
+
+<input type="text" id="buscador" placeholder="Buscar comida..." onkeyup="buscarProducto()">
+
+<div id="contenedorProductos"></div><br>
+
+</section>
+
+<section class="carrito">
+    <h2>🛒 Carrito</h2>
+    <div id="listaCarrito"></div>
+    <h3>Total: $<span id="total">0</span></h3>
+    <button class="pagar" onclick="pagar()">Pagar</button>
+    <button class="vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+</section>
+
+<section class="pagoBox" id="pagoBox" style="display:none;">
+<h2>Método de Pago</h2>
+
+<button onclick="efectivo()">Efectivo</button>
+<button onclick="tarjeta()">Tarjeta</button>
+
+<div id="datosTarjeta" style="display:none; margin-top:20px;">
+<input type="text" id="nombre" placeholder="Nombre" oninput="soloLetras()">
+
+<input type="text" id="numero" placeholder="Número tarjeta" maxlength="19" oninput="validarTarjeta()">
+
+<input type="text" id="cvv" placeholder="CVV" maxlength="3" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+
+<input type="text" id="fecha" placeholder="MM/AA" maxlength="5" oninput="formatoFecha()">
+
+<button onclick="pagarTarjeta()">Siguiente</button>
+</div>
+</section>
+
+<script src="../js/script.js"></script>
+<div id="loader" class="loader" style="display:none;">
+    <div class="spinner"></div>
+    <span>Procesando pago...</span>
+</div>
+</body>
+</html>

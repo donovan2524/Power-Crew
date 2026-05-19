@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Admin</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+<h1>Panel Administrador</h1>
+</header>
+
+
+<section class="pagoBox">
+
+<label>Selecciona sección:</label>
+
+<select id="categoriaProducto" onchange="cargarPanel()">
+    <option value="cafes">Cafés</option>
+    <option value="postres">Postres</option>
+    <option value="comidas">Comidas</option>
+</select>
+
+<input type="text" id="nuevoNombre" placeholder="Nombre producto">
+<input type="number" id="nuevoPrecio" placeholder="Precio">
+<input type="file" id="nuevaImagen" accept="image/*">
+
+<button onclick="agregarProducto()">Agregar Producto</button>
+
+<hr><br>
+
+<div id="listaAdmin"></div>
+<hr><br>
+
+
+
+<button onclick="window.location.href='cafes.html'">
+Volver al modo cliente
+</button>
+<br><br><hr><br><br>
+
+
+<h2>Historial de ventas</h2>
+
+<div id="historialVentas"></div>
+
+
+
+<button onclick="borrarVentas()">Borrar historial</button>
+<br>
+
+
+</section>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

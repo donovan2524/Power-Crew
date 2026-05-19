@@ -1,0 +1,631 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:40px;
+    background:#000;
+    border-bottom:2px solid gold;
+}
+
+header h1{
+    font-size:45px;
+    color:gold;
+}
+
+header p{
+    margin-top:10px;
+    color:#ccc;
+}
+
+/* BOTON MENU */
+.abrir{
+    position:fixed;
+    top:15px;
+    left:15px;
+    width:60px;
+    height:60px;
+    font-size:32px;
+    background:gold;
+    border:none;
+    cursor:pointer;
+    border-radius:10px;
+    z-index:1000;
+}
+
+/* MENU */
+.menu{
+    height:100%;
+    width:0;
+    position:fixed;
+    top:0;
+    left:0;
+    background:#000;
+    overflow-x:hidden;
+    transition:0.4s;
+    padding-top:60px;
+    z-index:1001;
+}
+
+.menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px 30px;
+    font-size:22px;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    background:gold;
+    color:black;
+}
+
+.cerrar{
+    position:absolute;
+    top:10px;
+    right:20px;
+    font-size:30px;
+    background:none;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+/* INICIO */
+.inicio{
+    text-align:center;
+    margin-top:100px;
+}
+
+.inicio h2{
+    font-size:35px;
+    color:gold;
+}
+
+.inicio p{
+    margin-top:15px;
+    color:#ddd;
+    font-size:20px;
+}
+
+
+
+
+
+
+.productos{
+    text-align:center;
+    padding:30px;
+}
+
+#buscador{
+    width:60%;
+    padding:12px;
+    margin-bottom:30px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+}
+
+.card{
+    background:#1b1b1b;
+    width:250px;
+    display:inline-block;
+    margin:15px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(255,215,0,0.3);
+}
+
+.card h2{
+    color:gold;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+.card button{
+    background:gold;
+    color:black;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.card button:hover{
+    background:white;
+}
+
+
+
+
+
+
+.carrito{
+    background:#1b1b1b;
+    width:80%;
+    margin:40px auto;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(255,215,0,0.3);
+    text-align:center;
+}
+
+.carrito h2{
+    color:gold;
+    margin-bottom:20px;
+}
+
+#listaCarrito{
+    margin-bottom:20px;
+    font-size:20px;
+}
+
+#listaCarrito p{
+    margin:8px 0;
+}
+
+.carrito h3{
+    margin-bottom:20px;
+    color:white;
+}
+
+.pagar{
+    background:gold;
+    color:black;
+    border:none;
+    padding:12px 30px;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.pagar:hover{
+    background:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+/* TABLET */
+@media (max-width:768px){
+    .card{
+        width:90%;
+    }
+
+    .card img{
+        height:200px;
+    }
+}
+
+/* CELULAR */
+@media (max-width:480px){
+    .card{
+        width:95%;
+    }
+
+    .card img{
+        height:170px;
+    }
+
+    #buscador{
+        width:95%;
+    }
+
+    header h1{
+        font-size:30px;
+    }
+}
+
+
+
+
+
+
+.pagoBox{
+    background:#1b1b1b;
+    width:80%;
+    margin:40px auto;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(255,215,0,0.3);
+}
+
+.pagoBox h2{
+    color:gold;
+    margin-bottom:20px;
+}
+
+.pagoBox button{
+    background:gold;
+    color:black;
+    border:none;
+    padding:12px 25px;
+    margin:10px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.pagoBox input{
+    width:80%;
+    padding:12px;
+    margin:8px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.vaciar{
+    background:#7a0000;
+    color:white;
+    border:none;
+    padding:12px 30px;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-left:10px;
+}
+
+.vaciar:hover{
+    background:red;
+}
+
+
+
+
+
+
+
+.loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    color:white;
+    font-size:25px;
+    flex-direction:column;
+}
+
+.loader span{
+    margin-top:15px;
+}
+
+.spinner{
+    border:5px solid #333;
+    border-top:5px solid gold;
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    0%{ transform:rotate(0deg); }
+    100%{ transform:rotate(360deg); }
+}
+
+
+.venta{
+    background:#111;
+    border:1px solid gold;
+    padding:15px;
+    border-radius:12px;
+    margin:15px 0;
+    text-align:left;
+}
+
+
+
+
+.modalCafe{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.contenidoModal{
+    background:#1b1b1b;
+    padding:30px;
+    border-radius:15px;
+    width:320px;
+    text-align:center;
+    box-shadow:0 0 15px gold;
+}
+
+.contenidoModal h2{
+    color:gold;
+    margin-bottom:20px;
+}
+
+.contenidoModal label{
+    display:block;
+    margin-top:15px;
+}
+
+.contenidoModal select{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    border-radius:8px;
+    border:none;
+}
+
+.contenidoModal button{
+    background:gold;
+    color:black;
+    border:none;
+    padding:10px 15px;
+    margin-top:15px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+
+
+
+/*PANEL*/
+/* PANEL ADMIN MÁS GRANDE */
+
+.pagoBox{
+    width:90%;
+    max-width:1200px;
+}
+
+#categoriaProducto{
+    width:300px;
+    padding:12px;
+    font-size:18px;
+    border-radius:10px;
+    margin-bottom:20px;
+    background:#222;
+    color:white;
+    border:1px solid gold;
+}
+
+#listaAdmin{
+    margin-top:30px;
+}
+
+#listaAdmin p{
+    background:#111;
+    border:1px solid gold;
+    padding:20px;
+    border-radius:15px;
+    margin:15px 0;
+    font-size:22px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+#listaAdmin button{
+    margin-left:10px;
+    font-size:18px;
+    padding:8px 15px;
+}
+
+#historialVentas{
+    margin-top:30px;
+}
+
+.venta{
+    font-size:20px;
+    padding:25px;
+}
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE GENERAL */
+
+@media (max-width: 1024px){
+
+    header h1{
+        font-size:36px;
+    }
+
+    .pagoBox,
+    .carrito{
+        width:90%;
+    }
+
+    .card{
+        width:80%;
+    }
+
+    #buscador{
+        width:85%;
+    }
+}
+
+@media (max-width: 768px){
+
+    header{
+        padding:30px 15px;
+    }
+
+    header h1{
+        font-size:30px;
+    }
+
+    header p{
+        font-size:16px;
+    }
+
+    .abrir{
+        width:50px;
+        height:50px;
+        font-size:26px;
+    }
+
+    .menu a{
+        font-size:20px;
+    }
+
+    .card{
+        width:90%;
+        margin:15px auto;
+    }
+
+    .card img{
+        height:190px;
+    }
+
+    .pagoBox input,
+    .pagoBox select{
+        width:95%;
+    }
+
+    #listaCarrito p{
+        font-size:16px;
+    }
+}
+
+@media (max-width: 480px){
+
+    header h1{
+        font-size:26px;
+    }
+
+    .productos{
+        padding:15px;
+    }
+
+    #buscador{
+        width:95%;
+        font-size:16px;
+    }
+
+    .card{
+        width:95%;
+        padding:15px;
+    }
+
+    .card img{
+        height:160px;
+    }
+
+    .carrito,
+    .pagoBox{
+        width:95%;
+        padding:15px;
+    }
+
+    .pagar,
+    .vaciar,
+    .pagoBox button{
+        width:90%;
+        margin:8px auto;
+        display:block;
+    }
+
+    #listaAdmin p{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+        font-size:18px;
+    }
+
+    #categoriaProducto{
+        width:95%;
+    }
+}
+
+
+
+
+
+/* ADMIN ABAJO DEL MENU */
+
+.menu{
+    display:flex;
+    flex-direction:column;
+}
+
+.menu a.adminLink{
+    margin-top:auto;
+    background:#111;
+    border-top:1px solid gold;
+}
+
+
+.volverBtn{
+    background:#333;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    margin-top:15px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.volverBtn:hover{
+    background:#555;
+}

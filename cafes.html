@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cafés</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- MENU -->
+<div id="menu" class="menu">
+    <button class="cerrar" onclick="cerrarMenu()">✖</button>
+    <a href="index.html">Inicio</a>
+    <a href="cafes.html">Cafés</a>
+    <a href="postres.html">Postres</a>
+    <a href="comidas.html">Comidas</a>
+</div>
+
+<button class="abrir" onclick="abrirMenu()">☰</button>
+
+<header>
+<h1>Cafés</h1>
+<p>Elige tu favorito</p>
+</header>
+
+<section class="productos">
+
+<input type="text" id="buscador" placeholder="Buscar café..." onkeyup="buscarProducto()"><br>
+
+<div id="contenedorProductos"></div>
+
+</section>
+
+
+
+<section class="carrito">
+    <h2>🛒 Carrito</h2>
+
+    <div id="listaCarrito"></div>
+
+    <h3>Total: $<span id="total">0</span></h3>
+
+    <button class="pagar" onclick="pagar()">Pagar</button>
+    <button class="vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+</section>
+
+
+
+<section class="pagoBox" id="pagoBox" style="display:none;">
+
+<h2>Método de Pago</h2>
+
+<button onclick="efectivo()">Efectivo</button>
+<button onclick="tarjeta()">Tarjeta</button>
+
+<div id="datosTarjeta" style="display:none; margin-top:20px;">
+
+<input type="text" id="nombre" placeholder="Nombre"
+oninput="soloLetras()">
+
+<input type="text" id="numero" placeholder="Número tarjeta"
+maxlength="19"
+oninput="validarTarjeta()">
+
+<input type="text" id="cvv" placeholder="CVV"
+maxlength="3"
+oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+
+<input type="text" id="fecha" placeholder="MM/AA"
+maxlength="5"
+oninput="formatoFecha()">
+
+<button onclick="pagarTarjeta()">PAGAR</button>
+
+</div>
+
+</section>
+
+
+
+<script src="../js/script.js"></script>
+<div id="loader" class="loader" style="display:none;">
+    <div class="spinner"></div>
+    <span>Procesando pago...</span>
+</div>
+
+
+
+<section class="modalCafe" id="modalCafe" style="display:none;">
+
+    <div class="contenidoModal">
+        <h2 id="nombreCafeModal">Personalizar café</h2>
+
+        <label>Tamaño:</label>
+        <select id="tamanoCafe">
+            <option value="Chico|0">Chico +$0</option>
+            <option value="Mediano|10">Mediano +$10</option>
+            <option value="Grande|20">Grande +$20</option>
+        </select>
+
+        <label>¿Lleva proteína?</label>
+        <select id="proteinaCafe">
+            <option value="Sin proteína|0">Sin proteína +$0</option>
+            <option value="Con proteína|25">Con proteína +$25</option>
+        </select>
+
+        <button onclick="confirmarCafe()">Agregar al carrito</button>
+        <button onclick="cerrarModalCafe()">Cancelar</button>
+    </div>
+
+</section>
+
+</body>
+</html>
